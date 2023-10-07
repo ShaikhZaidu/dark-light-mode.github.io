@@ -1,0 +1,121 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+:root {
+  --clr-body-bg: hsl(0, 0%, 76%);
+  --clr-card-bg: hsl(0 0% 100%);
+  --clr-heading: hsl(0, 0%, 0%);
+  --clr-text: hsl(0, 0%, 0%);
+  --clr-picker: #fff;
+}
+body {
+  background: var(--clr-body-bg);
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  background: var(--clr-body-bg);
+  color: var(--clr-text);
+}
+.top-container {
+  display: grid;
+  grid-template-columns: repeat(1, 2fr);
+  gap: 1.5rem;
+  padding-block: 2rem;
+  width: min(90%, 70rem);
+  margin-inline: auto;
+}
+.content {
+  text-align: center;
+  padding: 1% 2rem;
+  background: var(--clr-body-bg);
+  color: var(--clr-text);
+}
+.bottom-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  padding-block: 2rem;
+  width: min(90%, 70rem);
+  margin-inline: auto;
+}
+.child {
+  text-align: center;
+  border-radius: 10px;
+  padding: 2rem 2rem;
+  background: var(--clr-card-bg);
+  color: var(--clr-text);
+}
+.heading {
+  width: 100%;
+  height: auto;
+
+  background: var(--clr-card-bg);
+  color: var(--clr-heading);
+}
+.text {
+  width: 100%;
+  height: auto;
+  padding: 3rem;
+  background: var(--clr-card-bg);
+  color: var(--clr-text);
+}
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.header {
+  width: 100%;
+  height: 50px;
+  background: black;
+}
+.color-picker > fieldset {
+  border: 0;
+  display: flex;
+  gap: 2rem;
+  width: fit-content;
+  background: #fff;
+  padding: 0.5rem 2rem;
+  margin-inline: auto;
+  border-radius: 0 0 1rem 1rem;
+}
+.color-picker input[type="radio"] {
+  appearance: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  outline: 3px solid var(--radio-color, currentColor);
+  outline-offset: 3px;
+  border-radius: 50%;
+}
+
+.color-picker input[type="radio"]:checked {
+  background-color: var(--radio-color);
+}
+
+.color-picker input[type="radio"]#light {
+  --radio-color: hsl(0, 0%, 76%);
+}
+
+.color-picker input[type="radio"]#dark {
+  --radio-color: black;
+}
+:root:has(#dark:checked) {
+  --clr-body-bg: hsl(0, 0%, 0%);
+  --clr-card-bg: hsl(0, 0%, 12%);
+  --clr-heading: hsl(0, 0%, 76%);
+  --clr-text: hsl(0 0% 100%);
+}
+:root:has(#light:checked) {
+  --clr-body-bg: hsl(0, 0%, 76%);
+  --clr-card-bg: hsl(0 0% 100%);
+  --clr-heading: hsl(0, 0%, 0%);
+  --clr-text: hsl(0, 0%, 0%);
+}
